@@ -1,5 +1,6 @@
 const User = require('../models/User');
-const bcrypt = require('bcrypt')
+const handleErrors = require('../validation/validation');
+
 exports.loginGet = async (req, res) =>{
     res.send('login route')
 }
@@ -9,16 +10,19 @@ exports.registerGet = async (req, res) =>{
 }
 
 exports.registerPost = async (req, res) =>{
-    const {username, email, password, passwordVerify, } = req.body
-    const salt = await bcrypt.genSalt(10)
-    const hashedPassword = await bcrypt.hash(password, salt)
-    const newUser = await new User({
-        username: username,
-        email: email,
-        password: hashedPassword,
-        passwordVerify: hashedPassword
-    });
-    // await newUser.save();
-    res.send(newUser)
+    const {username, email, password } = req.body
+    try{
+        const newUser = await new User({
+            username: username,
+            email: email,
+            password: password,
+        });
+        await newUser.save();
+        res.send(newUser)
+    }
+    catch(err){
+        const errors = handleErrors(err)
+        res.status(400).send({errors})
+    }
 }
 
