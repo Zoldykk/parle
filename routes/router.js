@@ -4,6 +4,6 @@ const controller = require('../controllers/controller')
 
 router.get('/login', controller.loginGet)
 router.get('/register', controller.registerGet)
-
+router.post('/register', controller.registerPost)
 
 module.exports = router
