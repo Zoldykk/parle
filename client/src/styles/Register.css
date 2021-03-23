@@ -35,11 +35,21 @@
     background-color: #161b22;
 }
 
+.container .form form .username, .email, .password{
+    margin-bottom: 15px;
+}
+
+.container .form form .username, .email, .password, div{
+    color: #dd3a31;
+    font-size: 13px;
+}
+
 .container .form form input{
+    width: 100%;
     padding: 15px 10px;
     border: 1.5px solid rgb(194, 194, 194);
     border-radius: 5px; 
-    margin-bottom: 20px;
+    margin: 0;
 }
 
 .container .form form input:focus{
