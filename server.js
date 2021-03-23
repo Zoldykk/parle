@@ -7,7 +7,6 @@ const app = express()
 const port = process.env.PORT || 3000
 const routes = require('./routes/router')
 
-
 //Db connection
 const URI = process.env.dbURI;
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true },  () => {console.log('Connected to Db')})
