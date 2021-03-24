@@ -13,6 +13,10 @@ export default function Register() {
     const [passwordError, setPasswordError] = useState('')
 
     const handleSubmit = async (e) =>{
+        setUsernameError('')
+        setEmailError('')
+        setPasswordError('')
+        
         e.preventDefault()
         try{
             const response = await fetch('http://localhost:5000/register', {
@@ -20,11 +24,12 @@ export default function Register() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                credentials: 'include',
                 body: JSON.stringify({
                     username,
                     email,
                     password
-                })
+                }),
             })
             const data = await response.json()
             if(data.errors){
@@ -32,7 +37,7 @@ export default function Register() {
                 setEmailError(data.errors.email)
                 setPasswordError(data.errors.password)
             }else{
-                history.push('/')
+                history.push("/")
             }
         }
         catch(err){

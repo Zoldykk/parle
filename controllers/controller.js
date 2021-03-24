@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/User');
 const handleErrors = require('../validation/validation');
+const genToken = require('./auth');
 
 
 exports.loginPost = async (req, res) =>{
@@ -33,11 +34,12 @@ exports.registerPost = async (req, res) =>{
             password: password,
         });
         await newUser.save();
-        res.send(newUser)
+        const token = genToken(newUser._id)
+        res.cookie('jwt', token, {httpOnly: true, maxAge: 300000 })
+        res.json({user: newUser._id})
     }
     catch(err){
         const errors = handleErrors(err)
         res.status(400).send({errors})
     }
 }
-
