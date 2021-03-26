@@ -1,8 +1,11 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/User');
-const handleErrors = require('../validation/validation');
-const genToken = require('./auth');
+const handleErrors = require('./errorHandler');
+const genToken = require('./genToken');
 
+exports.homeGet = (req, res) =>{
+    
+}
 
 exports.loginPost = async (req, res) =>{
     const {username, password} = req.body;
@@ -11,12 +14,15 @@ exports.loginPost = async (req, res) =>{
         if(user){
             const comparePasswords = await bcrypt.compare(password, user.password);
             if(comparePasswords){
-                res.send(user._id)
+                const token = genToken(user._id)
+                res.cookie('jwt', token)
+                res.json({user: user._id})
             }else{
                 throw new Error('incorrect password')
             }
+        }else{
+            throw new Error('incorrect username')
         }
-        throw new Error('incorrect username')
     } 
     
     catch(err){
@@ -42,4 +48,9 @@ exports.registerPost = async (req, res) =>{
         const errors = handleErrors(err)
         res.status(400).send({errors})
     }
+}
+
+exports.logoutGet = async (req, res) =>{
+    res.cookie('jwt', '', {maxAge: 1})
+    res.redirect('/')
 }

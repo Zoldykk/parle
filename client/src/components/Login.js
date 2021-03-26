@@ -21,6 +21,7 @@ export default function Login() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                credentials: 'include',
                 body: JSON.stringify({
                     username,
                     password
@@ -31,8 +32,10 @@ export default function Login() {
             if(data){
                 setUsernameError(data.username)
                 setPasswordError(data.password)
-            }else{
-                history.push('/')
+            }
+            
+            if(data.user){
+                history.push('/home')
             }
         }
         catch(err){
