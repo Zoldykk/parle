@@ -1,0 +1,102 @@
+.Card{
+    height: auto;
+    border: 2px solid rgb(165, 165, 165);
+    border-radius: 5px;
+    margin: 20px 0px;
+    padding: 8px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Card:hover{
+    border: 2px solid rgb(104, 104, 104);
+    cursor: pointer;
+}
+
+.Card .card-info{
+    display: flex;
+    margin: 5px 0px;
+}
+
+.Card .card-info span{
+    margin-right: 5px;
+    color: #000000;
+}
+
+.Card .card-title{
+    margin-bottom: 5px;
+    color: black;
+}
+
+.Card .card-description{
+    color: rgb(100, 100, 100);
+    margin-bottom: 10px;
+}
+
+.Card .card-options{
+    display: flex;
+}
+
+.Card .card-options .vote{ 
+    padding: 2px 5px;
+    border: 1.5px solid rgb(165, 165, 165);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    min-width: 70px;
+    margin-right: 12px;
+    border-radius: 30px;    
+}
+
+.Card .card-options .vote button{ 
+    background-color: transparent;   
+    border: none;
+}
+
+.Card .card-options .vote button i{ 
+    color: #dd3a31;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.Card .card-options .vote span{ 
+    color: black;
+    margin: 0 5px;
+}
+
+.Card .card-options .comment{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1.5px solid rgb(165, 165, 165);
+    border-radius: 30px;    
+    padding: 2px 5px;
+}
+
+.Card .card-options .comment span{ 
+    color: black;
+}
+
+.Card .card-options .comment i{ 
+    margin-right: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.Card .card-options .save{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 2;
+}
+
+.Card .card-options .save i{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.Card .card-options .save span{
+    color: black;
+    margin-left: 4px;
+}

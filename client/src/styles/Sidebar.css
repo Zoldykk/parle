@@ -1,0 +1,28 @@
+.Sidebar{
+    border: 2px solid rgb(165, 165, 165);
+    border-radius: 5px;
+}
+
+.Sidebar .sidebar-header{
+    height: 90px;
+    display: flex;
+    align-items: center;
+    background-image: url('../images/banner-background.png');
+    background-position: center;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.Sidebar .sidebar-header h2{
+    margin-left: 18px;
+    color: #f0f6fc;
+}
+
+.Sidebar .communities-list{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.Sidebar .communities-list ul{
+    width: 70%;
+}
