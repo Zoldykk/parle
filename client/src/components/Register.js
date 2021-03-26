@@ -39,7 +39,7 @@ export default function Register() {
                 setEmailError(data.errors.email)
                 setPasswordError(data.errors.password)
             }else{
-                history.push("/")
+                history.push("/home")
             }
         }
         catch(err){
