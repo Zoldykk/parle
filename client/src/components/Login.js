@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import '../styles/Login.css'
+import Logo from '../images/logo.png'
+
 
 export default function Login() {
     let history = useHistory();
@@ -40,7 +42,7 @@ export default function Login() {
     return (
         <div className='container'>
             <div className="logo">
-                <img src="/logo.png" alt=""/>
+                <img src={Logo}alt=""/>
             </div>
             <div className="form">
                 <form onSubmit={handleSubmit}>
