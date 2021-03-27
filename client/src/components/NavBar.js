@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import '../styles/NavBar.css'
 import Logo from '../images/logo.png'
 export default function NavBar() {
@@ -15,7 +16,7 @@ export default function NavBar() {
                 <ul>
                     <li>Hi, username</li>
                     <li><i class="fas fa-pen"></i></li>
-                    <li><i class="fas fa-power-off"></i></li>
+                    <li><Link to='/logout'><i class="fas fa-power-off"></i></Link></li>
                 </ul>
             </div>
         </div>
