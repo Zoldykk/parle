@@ -12,6 +12,11 @@
     justify-content: center;
 }
 
+.NavBar .logo a{
+    display: flex;
+    justify-content: center;
+}
+
 .NavBar .logo img{
     width: 55%;
     height: auto;
