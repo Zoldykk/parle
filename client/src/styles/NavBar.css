@@ -44,6 +44,12 @@
     cursor: pointer;
 }
 
+.NavBar .nav-items ul li a{
+    color: #f0f6fc;
+    font-size: 18px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width : 768px) {
     .logo{
         width: 20% !important;
