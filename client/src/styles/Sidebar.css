@@ -23,6 +23,12 @@
     justify-content: center;
 }
 
-.Sidebar .communities-list ul{
+.Sidebar .communities-list ol{
     width: 70%;
+}
+
+.Sidebar .communities-list ol li{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 5px 0px;
 }

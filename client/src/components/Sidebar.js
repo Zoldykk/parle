@@ -7,13 +7,13 @@ export default function Sidebar() {
             </div>
 
             <div className='communities-list'>
-                <ul>
+                <ol>
                     <li>Ask Men</li>
-                    <li>Ask Men</li>
-                    <li>Ask Men</li>
-                    <li>Ask Men</li>
-                    <li>Ask Men</li>
-                </ul>
+                    <li>OnePiece</li>
+                    <li>Ask Women</li>
+                    <li>Web Dev</li>
+                    <li>Ask Reddit</li>
+                </ol>
             </div>
             
         </div>
