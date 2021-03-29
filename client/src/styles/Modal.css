@@ -1,0 +1,103 @@
+.Modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal .modal-box{
+    width: 45%;
+    min-width: 400px;
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;   
+    border-radius: 5px;
+    position: relative;
+}
+
+.Modal .modal-box .close-btn{
+    top: 10px;
+    right: 20px;
+    position: absolute;
+}
+
+.Modal .modal-box .close-btn i{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.Modal .modal-box form{
+    width: 80%;
+    display: flex;  
+    flex-direction: column;
+}
+
+.Modal .modal-box form .form-header{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.Modal .modal-box form input{
+    margin-bottom: 15px;
+    padding: 10px 6px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.Modal .modal-box form textarea{
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(189, 189, 189);
+    padding: 10px 6px;
+    resize: vertical;
+    font-size: 17px;
+    min-height: 90px;
+    max-height: 180px;
+}
+
+.Modal .modal-box form select{
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(189, 189, 189);
+    padding: 10px 6px;
+}
+
+.Modal .modal-box form input, .Modal .modal-box form textarea, .Modal .modal-box form select, :focus{
+    outline: none;
+}
+
+.Modal .modal-box form button{
+    border-radius: 5px;
+    border: 1px solid rgb(189, 189, 189);
+    padding: 10px 6px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 18px;
+    background-color: #dd3a31;
+    color: white;
+    border: none;
+}
+
+.Modal .modal-box form button:hover{
+    background-color: #df514a;
+}
+
+@media only screen and (max-width : 768px) {
+    .Modal .modal-box{
+        width: 90% !important;
+        max-width: 500px;
+        min-width: 0px;
+    }
+
+    .Modal .modal-box form{
+        width: 90%;
+    }
+}

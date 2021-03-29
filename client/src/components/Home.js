@@ -3,6 +3,7 @@ import Filter from './Filter'
 import Sidebar from './Sidebar'
 import Card from './Card'
 import '../styles/Home.css'
+import Modal from './Modal'
 export default function Home() {
     return (
         <div className='Home'>
@@ -18,6 +19,8 @@ export default function Home() {
                 <aside>
                     <Sidebar />
                 </aside>
+
+                <Modal/>
             </main>
         </div>
     )
