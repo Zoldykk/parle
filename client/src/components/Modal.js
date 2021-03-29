@@ -1,12 +1,16 @@
+import { useSelector, useDispatch } from 'react-redux'
+import {hide} from '../redux/modalReducer'
 import '../styles/Modal.css'
 export default function Modal() {
+    const {isActive} = useSelector(state => state.modalReducer)
+    const dispatch = useDispatch()
     return (
-        <div className='Modal'>
+        <div className={isActive ? 'Modal modal-active' : 'Modal'}>
             <div className="modal-box">
                 <div className="close-btn">
-                    <i class="fas fa-times"></i>
+                    <i onClick={() =>{dispatch(hide())}} class="fas fa-times"></i>
                 </div>
-                <form action="">
+                <form>
                     <div className='form-header'>
                         <h1>Create Post</h1>
                     </div>

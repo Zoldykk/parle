@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: #1D2535;
+    position: relative;
 }
 
 .NavBar .logo{
@@ -55,6 +56,40 @@
     cursor: pointer;
 }
 
+.NavBar .drop-down-content{
+    width: 15%;
+    min-width: 180px;
+    position: absolute;
+    right: 45px;
+    top: 60px;
+    background-color: #1D2535;
+    display: none;
+}
+
+.NavBar .drop-down-content ul{
+    list-style: none;
+}
+
+.NavBar .drop-down-content ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+    cursor: pointer;
+    color: #f0f6fc;
+}
+
+.NavBar .drop-down-content ul li:hover{
+    background-color: white;
+    color: #1D2535;
+    font-weight: bold;
+}
+
+.NavBar .drop-down-content ul li span,i{
+   font-size: 16px;
+   color: inherit;
+}
+
 @media only screen and (max-width : 768px) {
     .logo{
         width: 20% !important;
@@ -67,4 +102,8 @@
     .search{
         display: none;
     } 
+}
+
+.dorpdown-active{
+    display: block !important;
 }
