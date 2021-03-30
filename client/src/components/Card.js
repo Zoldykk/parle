@@ -14,16 +14,16 @@ export default function Card() {
             </div>
             <div className='card-options'>
                 <div className='vote'>
-                    <button className='upvote'><i class="fas fa-arrow-alt-up"></i></button>
+                    <button className='upvote'><i className="fas fa-arrow-alt-up"></i></button>
                     <span className='vote-counter'>15</span>
-                    <button className='downvote'><i class="fas fa-arrow-alt-down"></i></button>
+                    <button className='downvote'><i className="fas fa-arrow-alt-down"></i></button>
                 </div>
                 <div className='comment'>
-                <i class="fas fa-comment-alt"></i>
+                <i className="fas fa-comment-alt"></i>
                 <span className='comment-counter'>8</span>
                 </div>
                 <div className='save'>
-                    <i class="fas fa-bookmark"></i>
+                    <i className="fas fa-bookmark"></i>
                     <span>Save</span>
                 </div>
             </div>

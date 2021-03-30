@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const User = require('../models/User');
 const handleErrors = require('./errorHandler');
 const genToken = require('./genToken');
@@ -53,4 +54,19 @@ exports.registerPost = async (req, res) =>{
 exports.logoutGet = async (req, res) =>{
     res.cookie('jwt', '', {maxAge: 1})
     res.redirect('/')
+}
+
+exports.getCurrentUser = async (req, res) =>{
+    const token = req.cookies.jwt
+    if(token){
+        jwt.verify(token, process.env.secret, async (err, authorizedData) =>{
+            if(err){
+                console.log(err)
+            }
+            const currentUser = await User.findById(authorizedData.id)
+            res.json(currentUser)
+        })
+    }else{
+        res.send('auth error')
+    }
 }

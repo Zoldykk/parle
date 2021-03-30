@@ -8,7 +8,7 @@ export default function Modal() {
         <div className={isActive ? 'Modal modal-active' : 'Modal'}>
             <div className="modal-box">
                 <div className="close-btn">
-                    <i onClick={() =>{dispatch(hide())}} class="fas fa-times"></i>
+                    <i onClick={() =>{dispatch(hide())}} className="fas fa-times"></i>
                 </div>
                 <form>
                     <div className='form-header'>
