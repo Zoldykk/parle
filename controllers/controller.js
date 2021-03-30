@@ -1,11 +1,26 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User');
+const Post = require('../models/Post');
 const handleErrors = require('./errorHandler');
 const genToken = require('./genToken');
 
 exports.homeGet = (req, res) =>{
     
+}
+
+exports.homePost = async (req, res) =>{
+    const {title, description, community, originalPoster} = req.body;
+
+    const newPost = await new Post({
+        title: title,
+        description: description,
+        community: community,
+        voteCounter: 0,
+        originalPoster: originalPoster
+    })
+
+    console.log(newPost)
 }
 
 exports.loginPost = async (req, res) =>{
